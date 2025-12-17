@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MiEditorDF</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="toolbar-item" id="btnOpen">
+            <svg class="toolbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"></path>
+            </svg>
+            <span class="toolbar-label">Abrir</span>
+        </div>
+
+        <div class="toolbar-item" id="btnSave">
+            <svg class="toolbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            <span class="toolbar-label">Guardar</span>
+        </div>
+
+        <div class="toolbar-item" id="btnDownload">
+            <svg class="toolbar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span class="toolbar-label">Descargar</span>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Simbolos</div>
+            </div>
+  
+            <div class="symbol-item" data-shape="start">
+                <div class="symbol-preview">
+                    <svg width="50" height="30" viewBox="0 0 100 60">
+                        <ellipse cx="50" cy="30" rx="45" ry="25" fill="#ff6b35" stroke="#333" stroke-width="2"/>
+            <ellipse cx="50" cy="30" rx="45" ry="25" fill="#00b86b" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Inicio/Fin</div>
+            </div>
+
+            <div class="symbol-item" data-shape="process">
+                <div class="symbol-preview">
+                    <svg width="50" height="30" viewBox="0 0 100 60">
+                        <rect x="5" y="5" width="90" height="50" fill="#ff6b35" stroke="#333" stroke-width="2"/>
+            <rect x="5" y="5" width="90" height="50" fill="#00b86b" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Proceso</div>
+            </div>
+
+            <div class="symbol-item" data-shape="decision">
+                <div class="symbol-preview">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <polygon points="50,5 95,50 50,95 5,50" fill="#ff6b35" stroke="#333" stroke-width="2"/>
+            <polygon points="50,5 95,50 50,95 5,50" fill="#00bfff" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Condición</div>
+            </div>
+
+            <div class="symbol-item" data-shape="input">
+                <div class="symbol-preview">
+                    <svg width="50" height="30" viewBox="0 0 100 60">
+                        <polygon points="10,5 100,5 90,55 0,55" fill="#ff6b35" stroke="#333" stroke-width="2"/>
+            <polygon points="10,5 100,5 90,55 0,55" fill="#7fffd4" stroke="none" stroke-width="0"/>
+            <polygon points="10,5 100,5 90,55 0,55" fill="#00b86b" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Entrada/Salida</div>
+            </div>
+
+            <div class="symbol-item" data-shape="document">
+                <div class="symbol-preview">
+                    <svg width="50" height="30" viewBox="0 0 100 70">
+                        <path d="M5,5 L95,5 L95,55 Q75,65 50,55 Q25,45 5,55 Z" fill="#ff6b35" stroke="#333" stroke-width="2"/>
+            <path d="M5,5 L95,5 L95,55 Q75,65 50,55 Q25,45 5,55 Z" fill="#7fffd4" stroke="none" stroke-width="0"/>
+            <path d="M5,5 L95,5 L95,55 Q75,65 50,55 Q25,45 5,55 Z" fill="#00b86b" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Documento</div>
+            </div>
+
+            <div class="symbol-item" data-shape="comment">
+                <div class="symbol-preview">
+                    <svg width="100%" height="100%" viewBox="0 0 100 80" preserveAspectRatio="xMidYMid meet">
+                        <path d="M0,0 L80,0 L80,15 L95,15 L95,80 L0,80 Z M80,0 L95,15 L80,15 Z" fill="#bfc9d1" stroke="none" stroke-width="0"/>
+                    </svg>
+                </div>
+                <div class="symbol-label">Comentario</div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="tabs-container" id="tabsContainer">
+                <div class="tab active" data-tab-id="1">
+                    <span>Pestaña 1</span>
+                    <div class="tab-close">x</div>
+                </div>
+                <button class="tab-add">
+                    <span class="tab-add-icon">+</span>
+                </button>
+            </div>
+
+            <div class="canvas">
+                <svg id="svgCanvas" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+                        </pattern>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+                        </marker>
+                    </defs>
+                    <rect fill="url(#grid)"/>
+                    <g id="connectionsLayer"></g>
+                    <g id="shapesLayer"></g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
