@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header-title {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.toolbar {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.toolbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.toolbar-item:hover {
+    background-color: #f5f5f5;
+}
+
+.toolbar-item.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.toolbar-icon {
+    width: 20px;
+    height: 20px;
+    color: #666;
+}
+
+.toolbar-label {
+    font-size: 11px;
+    color: #666;
+}
+
+.toolbar-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #e0e0e0;
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+.sidebar {
+    width: 280px;
+    background-color: #fafafa;
+    border-right: 1px solid #e0e0e0;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.symbol-item {
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    cursor: grab;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.symbol-item:hover {
+    border-color: #ff6b35;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
+
+.symbol-item:active {
+    cursor: grabbing;
+}
+
+.symbol-preview {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.symbol-label {
+    font-size: 13px;
+    color: #333;
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 4px 4px;
+}
+
+.tabs-container {
+    background-color: #fffefe;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-bottom: 5px;
+}
+
+.tab {
+    background-color: white;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px 4px 4px 4px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.tab:not(.active) {
+    background-color: #f0f0f0;
+}
+
+.tab-close {
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    background: none;
+    padding: 0 4px;
+    color: #666;
+    cursor: pointer;
+    display: inline;
+    transition: color 0.2s;
+    align-items: center;
+    position: relative;
+}
+
+.tab-close:hover {
+    background: none;
+    color: #ff6b35;
+}
+
+.tab-add {
+    background-color: transparent;
+    border: none;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.tab-add:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tab-add-icon {
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+}
+
+.canvas {
+    flex: 1 1 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+    border-top: 1px solid #c0c0c0;
+}
