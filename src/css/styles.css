@@ -322,6 +322,34 @@ body {
     transition: opacity 0.2s;
 }
 
+.shape-group:hover .resize-handle {
+    opacity: 1;
+}
+
+.text-editor {
+    position: absolute;
+    background: white;
+    border: 2px solid #ff6b35;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+    outline: none;
+    z-index: 1000;
+}
+
+.save-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 2000;
+    animation: slideIn 0.3s ease-out;
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(400px);
